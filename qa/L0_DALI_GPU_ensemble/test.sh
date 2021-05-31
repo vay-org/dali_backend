@@ -23,5 +23,7 @@
 
 : ${GRPC_ADDR:=${1:-"localhost:8001"}}
 
+netstat -tuplen
+
 echo "RUN CLIENT"
 python client.py -u $GRPC_ADDR --n_iters 200

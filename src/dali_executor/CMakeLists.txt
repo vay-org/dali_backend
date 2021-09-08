@@ -43,8 +43,8 @@ add_custom_command(  # Download and unpack DALI wheel
 if (${TRITON_DALI_SKIP_DOWNLOAD})
     get_dali_paths(DALI_INCLUDE_DIR DALI_LIB_DIR DALI_LIBRARIES)
 else ()
-    set(DALI_INCLUDE_DIR ${CMAKE_CURRENT_BINARY_DIR}/dali/nvidia/dali/include)
-    set(DALI_LIB_DIR ${CMAKE_CURRENT_BINARY_DIR}/dali/nvidia/dali)
+    set(DALI_INCLUDE_DIR ${CMAKE_CURRENT_BINARY_DIR}/dali/nvidia/dali/include CACHE STRING "Path to DALI headers")
+    set(DALI_LIB_DIR ${CMAKE_CURRENT_BINARY_DIR}/dali/nvidia/dali CACHE STRING "Path to DALI")
     set(DALI_LIBRARIES dali dali_core dali_kernels dali_operators)
 endif ()  # TRITON_DALI_SKIP_DOWNLOAD
 
